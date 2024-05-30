@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <item
+        android:id="@+id/editarperfil"
+        android:icon="@drawable/editar"
+        android:title="Modificar datos"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/crearadmin"
+        android:icon="@drawable/admin"
+        android:title="Crear admin"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/logout"
+        android:icon="@drawable/logout"
+        android:title="Cerrar sesion"
+        android:checkable="true"/>
+
+</menu>

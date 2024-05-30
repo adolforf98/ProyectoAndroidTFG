@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- res/drawable/hip_hop_radio_button.xml -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/hip_hop_checked" android:state_checked="true"/>
+    <item android:drawable="@drawable/hip_hop_unchecked"/>
+</selector>

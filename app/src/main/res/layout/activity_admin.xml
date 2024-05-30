@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AdminActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigationadmin"
+        android:background="@color/verde"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="@color/verdeoscuro"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:paddingVertical="5dp">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="ONDAS 4*4"
+                android:textSize="20dp"
+                android:fontFamily=""
+                android:textColor="@color/verde">
+
+            </TextView>
+
+            <ImageView
+                android:id="@+id/logoImageView"
+                android:layout_marginHorizontal="20dp"
+                android:layout_width="40dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:src="@drawable/logofond"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="MANAGER  "
+                android:textSize="20dp"
+                android:textColor="@color/verde">
+
+            </TextView>
+        </LinearLayout>
+
+        <FrameLayout
+            android:id="@+id/frame_containeradmin"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        </FrameLayout>
+
+    </LinearLayout>
+
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigationadmin"
+        android:layout_alignParentBottom="true"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:menu="@menu/bottom_navigationadmin"
+        app:labelVisibilityMode="labeled"
+        app:itemIconSize="35dp"
+        app:itemTextAppearanceActiveBoldEnabled="true"
+        style="@style/BottomNavigation"/>
+
+
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/lateral_navigationadmin"
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:background="#FFFFFF"
+        app:menu="@menu/lateral_navigationadmin"
+        app:headerLayout="@layout/lateral_header"
+        android:layout_alignParentEnd="true"
+        android:layout_above="@id/bottom_navigationadmin"
+
+        />
+
+</RelativeLayout>

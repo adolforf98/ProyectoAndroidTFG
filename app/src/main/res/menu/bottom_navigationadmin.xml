@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/productosmenu"
+        android:icon="@drawable/productox"
+        android:title="Productos"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/proveedoresmenu"
+        android:icon="@drawable/proveedores"
+        android:title="Proveedores"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/clientessmenu"
+        android:icon="@drawable/cliente"
+        android:title="Clientes"
+        android:checkable="true"/>
+    <item
+        android:id="@+id/pedidosmenu"
+        android:icon="@drawable/pedidoss"
+        android:title="Pedidos"
+        android:checkable="true"/>
+
+    <item
+        android:id="@+id/cuentamenu"
+        android:icon="@drawable/usermacizo"
+        android:title="Cuenta"
+        android:checkable="true"/>
+</menu>
