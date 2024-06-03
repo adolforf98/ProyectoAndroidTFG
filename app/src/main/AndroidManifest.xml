@@ -7,17 +7,17 @@
     <uses-permission android:name="android.permission.READ_MEDIA_AUDIO" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.INTERNET" />
-
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
 
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@drawable/logofond"
-        android:label="GreenEat"
+        android:label="ONDAS4*4"
         android:roundIcon="@drawable/logopeque"
         android:supportsRtl="true"
-        android:theme="@style/Theme.GreenEat"
+        android:theme="@style/Theme.Ondas"
         tools:targetApi="31">
 
         <activity
@@ -29,6 +29,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <service
+            android:name=".RadioService"
+            android:exported="false"
+            android:foregroundServiceType="mediaPlayback" />
 
         <activity
             android:name=".AdminActivity"

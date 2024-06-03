@@ -67,20 +67,18 @@ public class LikesFragment extends Fragment {
         List<Lista> listas = new ArrayList<>();
 
         try (SQLiteDatabase db = dbHelper.getReadableDatabase();
-             Cursor cursor = db.rawQuery("SELECT l.* FROM ListasLikeadas ll " +
+             Cursor cursor = db.rawQuery("SELECT l.* FROM ListasLike ll " +
                      "JOIN Lista l ON ll.idLista = l.id " +
                      "WHERE ll.idUsuario = ?", new String[]{String.valueOf(idUsuario)})) {
 
             if (cursor != null && cursor.moveToFirst()) {
                 do {
-                    // Obtener datos de la lista deseada
                     long idLista = cursor.getLong(cursor.getColumnIndexOrThrow("id"));
                     String nombre = cursor.getString(cursor.getColumnIndexOrThrow("Nombre"));
                     String categoria = cursor.getString(cursor.getColumnIndexOrThrow("Categoria"));
                     String enlace = cursor.getString(cursor.getColumnIndexOrThrow("ENLACE"));
                     String imagenPath = cursor.getString(cursor.getColumnIndexOrThrow("Imagen"));
 
-                    // Crear un objeto Lista y agregarlo a la lista de resultados
                     Lista lista = new Lista(idLista, nombre, categoria, enlace, imagenPath);
                     listas.add(lista);
 
@@ -89,10 +87,12 @@ public class LikesFragment extends Fragment {
 
         } catch (Exception e) {
             e.printStackTrace();
-            // Manejar error al obtener los registros
         }
 
         return listas;
     }
+
+
+
 
 }

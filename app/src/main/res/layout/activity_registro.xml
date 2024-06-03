@@ -3,14 +3,14 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DDFAAF"
+    android:background="#E6EDDA"
     android:orientation="vertical">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_weight="1"
-        android:background="#DDFAAF"
+        android:background="#FFFFFFFF"
         android:orientation="horizontal"
         android:layout_marginTop="20dp"
         android:layout_marginLeft="50dp"
@@ -133,10 +133,10 @@
             android:layout_width="match_parent"
             android:layout_marginHorizontal="60dp"
             android:layout_height="60dp"
-            android:background="#81B62A"
+            android:background="#FF000000"
             android:layout_gravity="center"
             android:text="Enviar"
-            android:textColor="#0B3A17"
+            android:textColor="#FFFFFFFF"
             android:textSize="30dp"
             android:textStyle="bold" />
     </LinearLayout>

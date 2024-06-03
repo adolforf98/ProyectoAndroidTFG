@@ -188,23 +188,22 @@ public class DbHelper extends SQLiteOpenHelper {
         values.put("idUsuario", idUsuario);
         values.put("idLista", idLista);
 
-        db.insert("ListasDeseados", null, values);
+        db.insert("ListasLike", null, values); // Cambiado a ListasLike
 
         db.close();
     }
-  
+
     public void eliminarListaDeseado(long idUsuario, long idLista) {
         SQLiteDatabase db = this.getWritableDatabase();
 
         String whereClause = "idUsuario = ? AND idLista = ?";
         String[] whereArgs = new String[]{String.valueOf(idUsuario), String.valueOf(idLista)};
 
-        db.delete("ListasDeseados", whereClause, whereArgs);
+        db.delete("ListasLike", whereClause, whereArgs); // Cambiado a ListasLike
 
         db.close();
     }
-   
-    
+
 
 
 
