@@ -87,7 +87,7 @@ public class DbHelper extends SQLiteOpenHelper {
         String CREATE_Lista_TABLE = "CREATE TABLE Lista (" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 "Nombre TEXT, " +
-                "Categoria TEXT CHECK (Categoria IN ('ENTREVISTA', 'CONCIERTO', 'LISTA_ARTISTA', 'LISTA_TEMA', 'LISTA_ANIO')), " +
+                "Categoria TEXT CHECK (Categoria IN ('ENTREVISTA', 'CONCIERTO', 'FREESTYLE', 'LISTA_ARTISTA', 'LISTA_TEMA', 'LISTA_ANIO')), " +
                 "ENLACE TEXT, " +
                 "Imagen TEXT "+
                 ")";
@@ -97,27 +97,27 @@ public class DbHelper extends SQLiteOpenHelper {
 
 // Creación de un objeto ContentValues para la tabla Lista
         ContentValues valuesLista1 = new ContentValues();
-        valuesLista1.put("Nombre", "Concierto de Verano");
+        valuesLista1.put("Nombre", "CONCIERTO - VIOLADORES DEL VERSO Y SOZIEDAD ALKOHOLIKA");
         valuesLista1.put("Categoria", "CONCIERTO");
-        valuesLista1.put("ENLACE", "http://ejemplo.com/concierto");
-        valuesLista1.put("Imagen", "file:///android_asset/concierto_verano.png");
+        valuesLista1.put("ENLACE", "https://www.youtube.com/watch?v=L2WG0nT-wUY");
+        valuesLista1.put("Imagen", "file:///android_asset/logopeque.jpg");
 
 // Insertar los datos en la base de datos
         long idLista1 = db.insert("Lista", null, valuesLista1);
 
         ContentValues valuesLista2 = new ContentValues();
-        valuesLista2.put("Nombre", "Entrevista con Arturo Vidal");
+        valuesLista2.put("Nombre", "ENTREVISTA - Tupac en navidad");
         valuesLista2.put("Categoria", "ENTREVISTA");
-        valuesLista2.put("ENLACE", "http://ejemplo.com/entrevista_vidal");
-        valuesLista2.put("Imagen", "file:///android_asset/vidal_entrevista.png");
+        valuesLista2.put("ENLACE", "https://youtu.be/US3rz17OdxY");
+        valuesLista2.put("Imagen", "file:///android_asset/logopeque.jpg");
         long idLista2 = db.insert("Lista", null, valuesLista2);
 
 // Ejemplo 2: Insertar otra entrada de concierto
         ContentValues valuesLista3 = new ContentValues();
-        valuesLista3.put("Nombre", "Festival Rock del Valle");
-        valuesLista3.put("Categoria", "CONCIERTO");
-        valuesLista3.put("ENLACE", "http://ejemplo.com/festival_rock");
-        valuesLista3.put("Imagen", "file:///android_asset/festival_rock.png");
+        valuesLista3.put("Nombre", "FREESTYLE - ZATU EN NUEVA YORK");
+        valuesLista3.put("Categoria", "FREESTYLE");
+        valuesLista3.put("ENLACE", "https://youtu.be/1n3hOrC1grM");
+        valuesLista3.put("Imagen", "file:///android_asset/logopeque.jpg");
         long idLista3 = db.insert("Lista", null, valuesLista3);
 
 // Ejemplo 3: Insertar una lista de temas
@@ -125,15 +125,15 @@ public class DbHelper extends SQLiteOpenHelper {
         valuesLista4.put("Nombre", "Top Hits 2023");
         valuesLista4.put("Categoria", "LISTA_TEMA");
         valuesLista4.put("ENLACE", "http://ejemplo.com/top_hits");
-        valuesLista4.put("Imagen", "file:///android_asset/top_hits.png");
+        valuesLista4.put("Imagen", "file:///android_asset/logopeque.jpg");
         long idLista4 = db.insert("Lista", null, valuesLista4);
 
 // Ejemplo 4: Insertar una lista por artista
         ContentValues valuesLista5 = new ContentValues();
-        valuesLista5.put("Nombre", "Discografía de Shakira");
+        valuesLista5.put("Nombre", "LISTA - 13 PASOS");
         valuesLista5.put("Categoria", "LISTA_ARTISTA");
-        valuesLista5.put("ENLACE", "http://ejemplo.com/shakira_discografia");
-        valuesLista5.put("Imagen", "file:///android_asset/shakira.png");
+        valuesLista5.put("ENLACE", "https://youtu.be/HBU5R7a0a9k");
+        valuesLista5.put("Imagen", "file:///android_asset/logopeque.jpg");
         long idLista5 = db.insert("Lista", null, valuesLista5);
 
 // Ejemplo 5: Insertar una lista por año
@@ -141,7 +141,7 @@ public class DbHelper extends SQLiteOpenHelper {
         valuesLista6.put("Nombre", "Los mejores del 1990");
         valuesLista6.put("Categoria", "LISTA_ANIO");
         valuesLista6.put("ENLACE", "http://ejemplo.com/mejores_1990");
-        valuesLista6.put("Imagen", "file:///android_asset/mejores_1990.png");
+        valuesLista6.put("Imagen", "file:///android_asset/logopeque.jpg");
         long idLista6 = db.insert("Lista", null, valuesLista6);
 
 

@@ -1,13 +1,14 @@
 package com.example.primerproyecto;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,7 +20,7 @@ import com.bumptech.glide.Glide;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Locale;
+
 public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHolder> {
 
     private static List<Lista> listas;
@@ -77,6 +78,14 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
         Glide.with(holder.itemView.getContext())
                 .load(lista.getImagen())
                 .into(holder.imagenImageView);
+
+        holder.imagenImageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(lista.getEnlace()));
+                holder.itemView.getContext().startActivity(intent);
+            }
+        });
     }
 
     private boolean isListaEnListaFavoritos(long idLista, Context context) {
@@ -125,12 +134,12 @@ public class ListaAdapter extends RecyclerView.Adapter<ListaAdapter.ListaViewHol
                 faviconImageView.setImageResource(R.drawable.fullfav);
                 DbHelper dbHelper = new DbHelper(itemView.getContext());
                 dbHelper.agregarListaDeseado(idUsuario, idLista);
-                Toast.makeText(itemView.getContext(), "Lista añadido a la lista de likes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(itemView.getContext(), "Lista añadida a la lista de likes", Toast.LENGTH_SHORT).show();
             } else {
                 faviconImageView.setImageResource(R.drawable.emptyfav);
                 DbHelper dbHelper = new DbHelper(itemView.getContext());
                 dbHelper.eliminarListaDeseado(idUsuario, idLista);
-                Toast.makeText(itemView.getContext(), "Lista eliminado de la lista de likes", Toast.LENGTH_SHORT).show();
+                Toast.makeText(itemView.getContext(), "Lista eliminada de la lista de likes", Toast.LENGTH_SHORT).show();
             }
         }
     }
